@@ -107,6 +107,7 @@
     line-height: 17px;
     &-p {
       display: inline;
+      white-space: pre-wrap;
       vertical-align: middle;
     }
     .message-status {
