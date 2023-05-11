@@ -2,10 +2,11 @@
  * @Author: 王亚振
  * @Date: 2023-05-09 10:39:25
  * @LastEditors: 王亚振
- * @LastEditTime: 2023-05-09 10:41:00
- * @FilePath: /chat-uikit-react/src/components/TUIMessage/MessageCustom.tsx
+ * @LastEditTime: 2023-05-11 21:51:36
+ * @FilePath: \chat-uikit-react\src\components\TUIMessage\MessageCustom.tsx
  */
 import React, { PropsWithChildren } from "react";
+import { Skeleton } from "antd";
 import TIM from "tim-js-sdk";
 import { JSONStringToParse } from "../untils";
 import type { MessageContextProps } from "./MessageText";
@@ -52,7 +53,7 @@ function MessageCustomWithContext<T extends MessageContextProps>(
     }
     const customData = JSONStringToParse(data.data);
     if (customData.CustomType === "Typing") {
-      return "...";
+      return <Skeleton.Button active />;
     }
     return data.extension;
   };
